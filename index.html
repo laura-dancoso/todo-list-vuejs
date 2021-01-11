@@ -43,7 +43,7 @@
 
       <div id="todo-list" class="container mt-4 p-0">
         <div
-          v-for="item in items"
+          v-for="item in items.slice().reverse()"
           :class="{'alert alert-info':!item.checked, 'alert  alert-dark' : item.checked}"
           role="alert"
         >
@@ -55,7 +55,7 @@
               <s v-if="item.checked" class="m-0">{{item.msg}}</s>
               <p v-else class="m-0">{{item.msg}}</p>
             </div>
-            <span class="delete m-0 p-0 material-icons col-1" @click="deleteItem">
+            <span class="delete m-0 p-0 material-icons col-1" @click="deleteItem(item.id)">
               delete
             </span>
           </div>

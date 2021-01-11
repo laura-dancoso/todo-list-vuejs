@@ -14,7 +14,7 @@ const app = new Vue({
                 });
                 this.id++;
                 this.newItem='';
-                this.newItem.focus();
+                $('#todo-item').focus();
             }
         },
         deleteItem(id){
@@ -22,7 +22,7 @@ const app = new Vue({
            //encuentro el id del elemento a borrar
            let removeIndex = this.items.map(i=>i.id).indexOf(id);
            this.items.splice(removeIndex,1);
-           this.newItem.focus();
+           $('#todo-item').focus();
         },
         changeIcon(item){
             return (item.checked) ? 'check_box' : 'check_box_outline_blank';
